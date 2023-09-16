@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "_LayoutMdb";  //MDBootstrap için hazırlanan Layout'u bu sayfada kullandık. Amacım, MDBootstrap'in buton ve tablo görünümlerinin daha hoş olması dolayısıyla sadece tablo olan sayfalarım için bu servisi kullanmak.
+}
+
+@model IEnumerable<NextLevelBootcampOdev1.Models.Order>
+
+<div class=container>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sipariş No</th>
+                <th scope="col">Sipariş Tarihi</th>
+                <th scope="col">Ülke</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.OrderId</th>
+                    <th>@item.OrderDate</th>
+                    <th>@item.ShipCountry</th>
+                    <th><a class="btn btn-sm btn-outline-secondary" asp-controller="Order" asp-action="OrderDetails" asp-route-id="@item.OrderId">Details</a></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

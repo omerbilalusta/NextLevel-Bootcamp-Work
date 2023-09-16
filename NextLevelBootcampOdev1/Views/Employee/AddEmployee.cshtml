@@ -1,0 +1,173 @@
+﻿@model NextLevelBootcampOdev1.ViewModel.AddEmployeeModel
+
+<style type="text/css">
+    .likecontainer {
+        padding: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        box-shadow: 0 2px 8px rgba(0,0,0, 0.4);
+        border-radius: 30px;
+        background-color: #ffffff;
+    }
+</style>
+
+
+<div class="container">
+    <div class="row gx-5">
+        <div class="col-lg-3 mb-5 mb-lg-0 my-0"></div>
+        <div class="col-lg-6 mb-5 mb-lg-0 my-0">
+            <div class="likecontainer">
+                <div class="text-center my-1">
+                    <h4>Add Employee</h4>
+                    <hr />
+                </div>
+                <form asp-action="AddEmployee">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="row">
+                            <div class=col-6>
+                                <div class="my-1">
+                                    <label asp-for="FirstName" class="control-label"></label>
+                                </div>
+                                <div class="my-1 form-outline">
+                                    <input asp-for="FirstName" class="form-control" placeholder="First Name"/>
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            
+                            <div class=col-6>
+                                <div class="my-1">
+                                    <label asp-for="LastName" class="control-label"></label>
+                                </div>
+                                <div class="my-1 form-outline rounded-circle">
+                                    <input asp-for="LastName" class="form-control" placeholder="LastName"/>
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 my-1">
+                                <label asp-for="Title" class="control-label"></label>
+                                <div class="my-1 form-outline">
+                                    <select asp-for="Title" class=" form-control form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="Sales Representative">Sales Representative</option>
+                                        <option value="Inside Sales Coordinator">Inside Sales Coordinator</option>
+                                        <option value="Vice President, Sales">Vice President, Sales</option>
+                                        <option value="Sales Manager">Sales Manager</option>
+                                    </select>
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-6 my-1">
+                                <label asp-for="TitleOfCourtesy" class="control-label">Title of Courtesy</label>
+                                <div class="my-1 form-outline">
+                                    <select asp-for="TitleOfCourtesy" class="form-control form-select" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Ms.">Ms.</option>
+                                        <option value="Dr.">Dr.</option>
+                                    </select>
+                                    <span asp-validation-for="TitleOfCourtesy" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-1">
+                            <label asp-for="BirthDate" class="control-label"></label>
+                        </div>
+                        <div class="my-1 form-outline md-form md-outline input-with-post-icon datepicker" inline="true">
+                            <input asp-for="BirthDate" class="form-control" placeholder="Select date" />
+                            <i class="fas fa-calendar input-prefix"></i>
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="my-1">
+                            <label asp-for="Address" class="control-label"></label>
+                        </div>
+                        <div class="my-1 form-outline">
+                            <textarea asp-for="Address" class="form-control" placeholder="Address.." rows="1"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="my-1">
+                                    <label asp-for="Region" class="control-label"></label>
+                                </div>
+                                <div class="my-1 form-outline">
+                                    <select asp-for="Region" class="form-control form-select" aria-label="Default select example">
+                                        <option selected>Select Region</option>
+                                        <option value="Europe">Europe</option>
+                                        <option value="Middle East">Middle East</option>
+                                        <option value="America">America</option>
+                                    </select>
+                                    <span asp-validation-for="Region" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label asp-for="Country" class="control-label"></label>
+                                <div class="my-1 form-outline">
+                                    <select asp-for="Country" class="form-control form-select" placeholder="Country">
+                                        <option selected>Select Country</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Turkey">Turkey</option>
+                                        <option value="United States">United States</option>
+                                    </select>
+                                    <span asp-validation-for="Country" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 my-1">
+                                <label asp-for="City" class="control-label"></label>
+                                <div class="my-1 form-outline">
+                                    <select asp-for="City" class="form-control form-select" aria-label="Default select example">
+                                        <option selected>Select City</option>
+                                        <option value="London">London</option>
+                                        <option value="Ankara">Ankara</option>
+                                        <option value="New York">New York</option>
+                                    </select>
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="my-1">
+                                    <label asp-for="PostalCode" class="control-label"></label>
+                                </div>
+                                <div class="my-1 form-outline">
+                                    <input asp-for="PostalCode" class="form-control" placeholder="Postal Code" />
+                                    <span asp-validation-for="PostalCode" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-1">
+                            <label asp-for="HomePhone" class="control-label"></label>
+                        </div>
+                        <div class="my-1 form-outline">
+                            <input asp-for="HomePhone" class="form-control" placeholder="Home Phone" />
+                            <span asp-validation-for="HomePhone" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-4"></div>
+
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-11"></div>
+                        <div class="my-1">
+                            <input type="submit" value="Add" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3 mb-5 mb-lg-0 my-0"></div>
+    </div>
+</div>
+
+<script>
+    $('.datepicker').datepicker({
+        inline: true
+    });
+</script>
